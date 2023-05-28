@@ -1,0 +1,9 @@
+{% extends "encyclopedia/layout.html" %}
+{% block body %} 
+<h1>Enter the page you wish to Edit</h1>
+<form action="{% url 'edit_page' %}" method = "GET">
+    {% csrf_token %}
+     <input class="form-control" type="text" placeholder="Page Name" name = "name">
+     <input type="submit">
+</form>
+{% endblock %} 

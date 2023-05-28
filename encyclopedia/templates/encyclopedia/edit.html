@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %} 
+{% block body %} 
+<form action="{% url 'edit_page' %}" method = "POST">
+    {% csrf_token %}
+    <input class="form-control" type="text" value = "{{page_name}}" name = "name">
+    
+ <div class="md-form">
+     <label for="form7">Enter the page content</label>
+     <textarea id="form7" class="md-textarea form-control" rows="3" placeholder = "Enter the content..." name = "content">{{content}}</textarea>
+     
+   </div>
+   <input type="submit">
+ 
+ </form>
+{% endblock %}
